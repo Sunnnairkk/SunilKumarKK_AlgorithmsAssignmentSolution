@@ -32,6 +32,11 @@ public class Stockers {
 				System.out.print("\nWhether the Company's Stock price rose today compare to yesterday? " );
 				stockStatus[i] = in.nextBoolean();
 			}
+			
+			MergeSort ms = new MergeSort();
+			ms.sort(stockValue,0,stockValue.length-1);
+				
+			Stockers stockers = new Stockers();
 
 			int menuOption = -1;
 			do {
@@ -46,17 +51,13 @@ public class Stockers {
 				System.out.println("0. To Exit");
 				System.out.println("-------------------------------------------------\n");
 				menuOption = in.nextInt();
-
-				MergeSort ms = new MergeSort();
-				Stockers stockers = new Stockers();
-
+	
 				switch (menuOption) {
 				case 0 :
 					break;
 
 				case 1 :
 					if (numOfCompanies>1) {
-						ms.sort(stockValue,0,stockValue.length-1);
 						ms.printArray(ms.getSortedArray());
 					}
 					else
@@ -65,7 +66,6 @@ public class Stockers {
 
 				case 2 :
 					if (numOfCompanies > 1) {
-						ms.sort(stockValue,0,stockValue.length-1);
 						ms.printArrayDesc(ms.getSortedArray());
 					}
 					else
