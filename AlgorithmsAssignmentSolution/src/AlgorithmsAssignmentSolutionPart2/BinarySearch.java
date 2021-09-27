@@ -11,14 +11,11 @@ public class BinarySearch {
 
 			int mid = (left + right) / 2; 
 			
-			System.out.print(" " + dArr[mid]);
-			
-			if (dArr[mid] < searchKey) {
+			if (dArr[mid] > searchKey) {
 				left = mid + 1;
 			}
 			else if (dArr[mid] == searchKey) {
 				foundValueAt = mid;
-				//System.out.println("Found value at " + mid);
 				break;
 			}
 			else {
